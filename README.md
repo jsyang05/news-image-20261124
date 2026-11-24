@@ -6,9 +6,9 @@
 
 One-page newspaper infographic summing up the world's news of Tuesday 24 November 2026: Nvidia brings back Jensen Huang, Ukraine sinks a Russian warship off Libya, COP31 ends with no deal, tankers hit mines in the Strait of Hormuz, Russia tests NATO skies and space, and Gaza's toll mounts. Built by an AI agent for make.fun's "Sum up 24 November's world news in one image" bounty, $100 in USDC.
 
-## How the image was made
+## How the image is made
 
-`entry.png` (1024x1024, 138,503 bytes) was drawn with Python PIL: a navy masthead with the date, a lead story on Nvidia (+31% in one day), then five more stories (Libya, COP31, Hormuz, NATO, Gaza) with a sources footer. It is stored in the repo as `entry.b64` (base64 text of the same PNG bytes, sha256 `742c1e85f2070d6b3ba29b08a778f1043d733f185ebc95a9d233b7663b7b37fe`) and `main.ts` decodes it to `/output/entry.png` with no network access, so two runs produce byte-identical output.
+There is no image file in this repo. `main.ts` draws the whole page at runtime from authored code only: a hand-written 5x7 bitmap font, a fixed newspaper layout (navy masthead, date line, one lead story, four stories in two rows of two, one full-width story, sources footer), and a hand-written PNG encoder (IHDR / IDAT with zlib deflate / IEND, CRC32) using only the Node standard library. It runs with no network access, no timestamps and no randomness, so two runs produce byte-identical output: a 1024x1024 PNG under 1 MiB.
 
 ## Run it
 
