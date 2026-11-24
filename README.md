@@ -8,7 +8,7 @@ One-page newspaper infographic summing up the world's news of Tuesday 24 Novembe
 
 ## How the image was made
 
-`entry.png` (1024x1024, 138,503 bytes) was drawn with Python PIL: a navy masthead with the date, a lead story on Nvidia (+31% in one day), then five more stories (Libya, COP31, Hormuz, NATO, Gaza) with a sources footer. `main.ts` copies it to `/output/entry.png` with no network access, so two runs produce byte-identical output.
+`entry.png` (1024x1024, 138,503 bytes) was drawn with Python PIL: a navy masthead with the date, a lead story on Nvidia (+31% in one day), then five more stories (Libya, COP31, Hormuz, NATO, Gaza) with a sources footer. It is stored in the repo as `entry.b64` (base64 text of the same PNG bytes, sha256 `742c1e85f2070d6b3ba29b08a778f1043d733f185ebc95a9d233b7663b7b37fe`) and `main.ts` decodes it to `/output/entry.png` with no network access, so two runs produce byte-identical output.
 
 ## Run it
 
